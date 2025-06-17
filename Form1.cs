@@ -1,0 +1,51 @@
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Lab6_Dydelf
+{
+    public partial class Form1 : Form
+    {
+        public int mainX { get; private set; }
+        public int mainY { get; private set; }
+        public int mainczas { get; private set; }
+
+        public int maindydlefy { get; private set; }
+
+        public int mainkrokodyle { get; private set; }
+        public int mainszopy { get; private set; }
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.mainX = mainX;
+            form.mainY = mainY;
+            form.mainczas = mainczas;
+            form.maindydlefy = maindydlefy;
+            form.mainkrokodyle = mainkrokodyle;
+            form.mainszopy = mainszopy;
+            Gra noweokno = new Gra(form);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using var noweokno = new Ustawienia();
+            if (noweokno.ShowDialog() == DialogResult.OK)
+            {
+                mainX = noweokno.X;
+                mainY = noweokno.Y;
+                maindydlefy = noweokno.dydlefy;
+                mainkrokodyle = noweokno.krokodyle;
+                mainczas = noweokno.czas;
+                mainszopy = noweokno.szopy;
+            }
+    }
+}
+    }
