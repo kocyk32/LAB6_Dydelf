@@ -32,6 +32,10 @@ namespace Lab6_Dydelf
             form.mainkrokodyle = mainkrokodyle;
             form.mainszopy = mainszopy;
             Gra noweokno = new Gra(form);
+            if (noweokno.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

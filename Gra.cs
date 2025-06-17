@@ -121,7 +121,7 @@ namespace Lab6_Dydelf
             if (pozostalyczas <= 0)
             {
                 gameTimer.Stop();
-                EndGame(false, "Czas minął! Przegrałeś D: ");
+                EndGame(false, "Czas minął! Przegrałeś! ");
             }
 
         }
@@ -132,7 +132,7 @@ namespace Lab6_Dydelf
             if (krokodylczas <= 0)
             {
                 krokodylTimer.Stop();
-                EndGame(false, "KROKODYL!!! AAAAAAAA!!! Przegrałeś D: ");
+                EndGame(false, "Krokodyl! Przegrałeś!");
             }
 
         }
@@ -146,12 +146,12 @@ namespace Lab6_Dydelf
 
             if (content == "Dydelf")
             {
-                btn.BackColor = Color.Green;
+                btn.BackColor = Color.Yellow;
                 btn.Text = "🐭";
                 znalezionedydlefy++;
 
                 if (znalezionedydlefy == form.maindydlefy)
-                    EndGame(true, "Wszystkie Dydelfy znalezione!!! Brawo!!!");
+                    EndGame(true, "Wszystkie Dydelfy znalezione! Wygrana!");
             }
             else if (content == "Krokodyl")
             {
@@ -170,7 +170,7 @@ namespace Lab6_Dydelf
                     krokodylTimer.Interval = 1000;
                     krokodylTimer.Tick += KrokodylTimer_Tick;
                     krokodylTimer.Start();
-                    btn.BackColor = Color.Red;
+                    btn.BackColor = Color.Purple;
                     btn.Text = "🐊";
 
                 }
@@ -185,7 +185,7 @@ namespace Lab6_Dydelf
             else if (content == "Szop")
             {
 
-                btn.BackColor = Color.Blue;
+                btn.BackColor = Color.Orange;
                 btn.Text = "🦝";
                 SzopTimer = new System.Windows.Forms.Timer();
                 SzopTimer.Interval = 2000;
